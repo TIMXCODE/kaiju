@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Microphone access under the hardened runtime. Screen recording is granted
+	     through TCC at runtime and needs no entitlement. -->
+	<key>com.apple.security.device.audio-input</key>
+	<true/>
+	<!-- Kaiju is deliberately NOT sandboxed: a game clipper has to write clips to
+	     wherever you keep your videos and read the list of running applications.
+	     Sandboxing it would mean a folder picker for every save location and a
+	     much worse game-detection story. -->
+</dict>
+</plist>

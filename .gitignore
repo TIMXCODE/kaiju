@@ -1,0 +1,8 @@
+.DS_Store
+build/
+DerivedData/
+*.xcuserdatad
+xcuserdata/
+.swiftpm/
+KaijuKit/.build/
+*.xcworkspace/xcuserdata/
