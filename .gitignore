@@ -6,3 +6,4 @@ xcuserdata/
 .swiftpm/
 KaijuKit/.build/
 *.xcworkspace/xcuserdata/
+build.log

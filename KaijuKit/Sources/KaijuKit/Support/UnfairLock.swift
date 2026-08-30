@@ -3,7 +3,10 @@ import Foundation
 /// Thin wrapper over `os_unfair_lock`. Used on the capture/encode hot path where
 /// an `NSLock` allocation and its objc dispatch are measurable.
 public final class UnfairLock: @unchecked Sendable {
-    private let storage: UnsafeMutablePointer<os_unfair_lock>
+    // `@usableFromInline` rather than `private`: the accessors below are
+    // `@inlinable` so this lock costs nothing across the module boundary on the
+    // capture hot path, and an inlinable body may only touch internal-or-better state.
+    @usableFromInline let storage: UnsafeMutablePointer<os_unfair_lock>
 
     public init() {
         storage = .allocate(capacity: 1)
